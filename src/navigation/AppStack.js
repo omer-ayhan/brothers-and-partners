@@ -1,4 +1,5 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Text} from 'native-base';
 import React from 'react';
 
 import routes from '../constants/routes';
@@ -30,8 +31,16 @@ export default function AppStack() {
         name={routes.RecordDetail}
         component={RecordDetail}
         options={{
-          title: 'Şirket Bilgileri',
+          title: 'Şirket Detayları',
           headerTintColor: colors.primary_custom,
+          headerStyle: {
+            backgroundColor: colors.gray[50],
+          },
+          headerShadowVisible: false,
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: '500',
+          },
         }}
       />
     </Stack.Navigator>

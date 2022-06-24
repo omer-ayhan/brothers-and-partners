@@ -1,13 +1,45 @@
 import React from 'react';
-import {Box, VStack, Text, Button, HStack, Switch} from 'native-base';
+import {Box, VStack, Text, Button, HStack, Switch, FlatList} from 'native-base';
 import CustomInput from '../components/CustomInput';
 import {ScrollView} from 'react-native-gesture-handler';
 
 export default function RecordDetail() {
+  const button_list = [
+    {id: 1, title: 'Şirket Bilgileri'},
+    {id: 2, title: 'Kontrol Listesi'},
+    {id: 3, title: 'Sosyal Yardımlar'},
+  ];
+
+  const renderButtons = ({item, index}) => (
+    <Button
+      colorScheme="primary"
+      rounded={5}
+      mx="1"
+      py="1"
+      bg={index == 0 ? 'primary_custom' : 'white'}
+      _pressed={{
+        backgroundColor: index === 0 ? 'orange.500' : 'orange.50',
+      }}
+      _text={{
+        fontSize: 'lg',
+        fontWeight: 'bold',
+        color: index === 0 ? 'white' : 'dark',
+      }}>
+      {item.title}
+    </Button>
+  );
+
   return (
-    <Box h="100%" p="5">
+    <Box h="100%" p="5" bg="gray.50">
       <ScrollView>
         <VStack space={3}>
+          <FlatList
+            showsHorizontalScrollIndicator={false}
+            data={button_list}
+            renderItem={renderButtons}
+            keyExtractor={item => item.id.toString()}
+            horizontal
+          />
           <CustomInput
             py="2"
             title="Unvan"
@@ -92,7 +124,7 @@ export default function RecordDetail() {
                 fontSize: 'md',
               }}
               _pressed={{
-                bg: 'gray.50',
+                bg: 'gray.100',
               }}>
               Sözleşme Tarihi
             </Button>
@@ -109,7 +141,7 @@ export default function RecordDetail() {
                 fontSize: 'md',
               }}
               _pressed={{
-                bg: 'gray.50',
+                bg: 'gray.100',
               }}>
               Çalışan Listesi
             </Button>
@@ -126,7 +158,7 @@ export default function RecordDetail() {
                 fontSize: 'md',
               }}
               _pressed={{
-                bg: 'gray.50',
+                bg: 'gray.100',
               }}>
               Personal Listesi
             </Button>
@@ -153,7 +185,7 @@ export default function RecordDetail() {
                 fontSize: 'md',
               }}
               _pressed={{
-                bg: 'gray.50',
+                bg: 'gray.100',
               }}>
               Sözleşmeler
             </Button>
@@ -171,7 +203,7 @@ export default function RecordDetail() {
                   fontSize: 'md',
                 }}
                 _pressed={{
-                  bg: 'gray.50',
+                  bg: 'gray.100',
                 }}>
                 Çalışma Süreleri
               </Button>
@@ -185,7 +217,7 @@ export default function RecordDetail() {
                   fontSize: 'md',
                 }}
                 _pressed={{
-                  bg: 'gray.50',
+                  bg: 'gray.100',
                 }}>
                 Ara Dinlenme Süreleri
               </Button>
