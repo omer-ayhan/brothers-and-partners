@@ -1,14 +1,21 @@
-import Screens from '@constants/Screens';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import LoginScreen from '@screens/LoginScreen';
 import React from 'react';
+
+import routes from '../constants/routes';
+import LoginScreen from '../screens/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 
 export default function AppStack() {
   return (
-    <Stack.Navigator initialRouteName={Screens.Login}>
-      <Stack.Screen name={Screens.Login} component={LoginScreen} />
+    <Stack.Navigator initialRouteName={routes.Login}>
+      <Stack.Screen
+        name={routes.Login}
+        component={LoginScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 }
