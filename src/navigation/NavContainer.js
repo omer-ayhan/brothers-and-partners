@@ -8,9 +8,9 @@ import {Box} from 'native-base';
 export default function NavContainer() {
   return (
     <NavigationContainer>
-      <Box flex={1} safeArea>
-        <AppStack />
-      </Box>
+      {/* <Box flex={1} safeArea> */}
+      <AppStack />
+      {/* </Box> */}
     </NavigationContainer>
   );
 }

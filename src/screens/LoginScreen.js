@@ -1,8 +1,17 @@
 import React from 'react';
 import {Button, Center, Image, Text, VStack} from 'native-base';
+import {useNavigation} from '@react-navigation/native';
+
 import CustomInput from '../components/CustomInput';
+import Screens from '../constants/routes';
 
 export default function LoginScreen() {
+  const navigation = useNavigation();
+
+  const handleLogin = () => {
+    navigation.navigate(Screens.RecordsContainer);
+  };
+
   return (
     <VStack
       justifyContent="center"
@@ -41,7 +50,7 @@ export default function LoginScreen() {
           }}
           bg="primary_custom"
           w="100%"
-          onPress={() => console.log('hello world')}>
+          onPress={handleLogin}>
           <Text fontSize="2xl" fontWeight="bold" color="white">
             Giriş Yap
           </Text>

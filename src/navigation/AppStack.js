@@ -3,6 +3,7 @@ import React from 'react';
 
 import routes from '../constants/routes';
 import LoginScreen from '../screens/LoginScreen';
+import MainStack from './MainStack';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +13,13 @@ export default function AppStack() {
       <Stack.Screen
         name={routes.Login}
         component={LoginScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name={routes.RecordsContainer}
+        component={MainStack}
         options={{
           headerShown: false,
         }}

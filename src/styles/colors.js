@@ -6,4 +6,6 @@ export default {
     200: '#6B6D78',
   },
   dark: '#333333',
+  green_custom: '#4CAF50',
+  red_custom: '#E53935',
 };
