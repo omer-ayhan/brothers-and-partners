@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Center, Image, Text, VStack} from 'native-base';
 import {useNavigation} from '@react-navigation/native';
+// import IconFeather from 'react-native-vector-icons/Feather';
 
 import CustomInput from '../components/CustomInput';
 import Screens from '../constants/routes';
@@ -36,6 +37,7 @@ export default function LoginScreen() {
           _focus={{
             bg: 'white',
           }}
+          // inputLeft={<IconFeather name="user" size={20} color="gray.200" />}
         />
         <CustomInput
           placeholder="Şifre"
@@ -43,6 +45,7 @@ export default function LoginScreen() {
           _focus={{
             bg: 'white',
           }}
+          // inputLeft={<IconFeather name="lock" size={20} color="gray.200" />}
         />
         <Button
           _pressed={{

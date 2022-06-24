@@ -1,9 +1,25 @@
 import React from 'react';
 import {Box, Icon, Input, Text} from 'native-base';
 
-export default function CustomInput({placeholder, ...props}) {
+export default function CustomInput({
+  placeholder,
+  inputLeft,
+  required,
+  title,
+  ...props
+}) {
   return (
-    <Box alignItems="center">
+    <Box>
+      {title && (
+        <Text fontSize="lg">
+          {title}{' '}
+          {required && (
+            <Text fontSize="lg" color="red.400">
+              *
+            </Text>
+          )}
+        </Text>
+      )}
       <Input
         placeholder={placeholder}
         w="100%"
@@ -11,7 +27,7 @@ export default function CustomInput({placeholder, ...props}) {
         bg="white"
         p={3}
         fontSize={20}
-        // InputLeftElement={ }
+        InputLeftElement={inputLeft}
         {...props}
       />
     </Box>

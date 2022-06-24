@@ -24,7 +24,7 @@ export default function MainStack() {
             fontSize: 20,
             fontWeight: '500',
           },
-          headerRight: () => <Text>Test</Text>,
+          //   headerRight: () => <Text>Test</Text>,
         }}
       />
     </Drawer.Navigator>

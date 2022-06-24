@@ -3,6 +3,8 @@ import React from 'react';
 
 import routes from '../constants/routes';
 import LoginScreen from '../screens/LoginScreen';
+import RecordDetail from '../screens/RecordDetail';
+import colors from '../styles/colors';
 import MainStack from './MainStack';
 
 const Stack = createNativeStackNavigator();
@@ -22,6 +24,14 @@ export default function AppStack() {
         component={MainStack}
         options={{
           headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name={routes.RecordDetail}
+        component={RecordDetail}
+        options={{
+          title: 'Şirket Bilgileri',
+          headerTintColor: colors.primary_custom,
         }}
       />
     </Stack.Navigator>
